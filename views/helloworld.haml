@@ -1,0 +1,18 @@
+#helloworld
+  = 5*6
+  = haml :test_partial
+
+  %form.form-horizontal{:method => 'post', :action => '/helloworld'}
+    .control-group
+      %label{:class => ['control-label'], :for => 'inputEmail'}Email
+      .controls
+        %input{:type => 'text', :id => 'inputEmail', :name => 'email', :placeholder => 'Email'}
+
+    .control-group
+      %lablel{:class => ['control-label'], :for => 'inputPassword'}Password
+      .controls
+        %input{:type => 'password', :id => 'inputPassword', :name => 'password', :placeholder => 'Password'}
+
+    .control-group
+      .controls
+        %button.btn{:type=>'submit'}Sign in

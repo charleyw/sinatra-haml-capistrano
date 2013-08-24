@@ -1,0 +1,32 @@
+!!!
+%html{html_attrs}
+  %head
+    %meta{:'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
+    %meta{:name => "lang", :content => "en"}
+    %meta{:name => 'viewport', :content=>"width=device-width, initial-scale=1.0"}
+    %title Hackday!
+    %link{:href=>'/stylesheets/bootstrap.min.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+    %link{:href=>'/stylesheets/bootstrap/bootstrap-responsive.min.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+    %link{:href=>'/stylesheets/style.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+    %script{:src => 'http://code.jquery.com/jquery-1.8.2.min.js'}
+    %script{:src => '/stylesheets/bootstrap/js/bootstrap.js'}
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container.clearfix
+          %a{:class=>'brand', :href=>"#"} HackDay
+          .nav-collapse.collapse
+            %ul{:class=>'nav'}
+              %li{:class=>'active'}
+                %a{:href=>'#'} Home
+
+    .container
+
+      = styled_flash
+      = yield
+
+
+      %hr
+      .row
+        .span5
+          &copy; Casa.it
