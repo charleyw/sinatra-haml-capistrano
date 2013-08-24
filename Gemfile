@@ -6,6 +6,7 @@ gem 'haml'
 gem 'sinatra'
 gem "sinatra-flash"
 gem "capistrano"
+gem 'rvm-capistrano'
 
 group :test do
   gem 'rspec-html-matchers'
