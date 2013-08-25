@@ -32,11 +32,11 @@ before 'deploy:setup', 'rvm:install_ruby' # install Ruby and create gemset
 
 namespace :deploy do
   task :start, :roles => :app do
-    run "cd #{deploy_to}/current && nohup thin -C config/production_config.yml -R config.ru start"
+    run "cd #{deploy_to}/current && nohup bundle exec thin -C config/production_config.yml -R config.ru start"
   end
 
   task :stop, :roles => :app do
-    run "cd #{deploy_to}/current && nohup thin -C config/production_config.yml -R config.ru stop"
+    run "cd #{deploy_to}/current && nohup bundle exec thin -C config/production_config.yml -R config.ru stop"
   end
 
   task :restart, :roles => :app do
@@ -53,6 +53,6 @@ end
 
 namespace :"#{application}" do
   task :log do
-    run "cat #{deploy_to}/current/log/thin.log"
+    run "tail -f #{deploy_to}/current/log/thin.log"
   end
 end
